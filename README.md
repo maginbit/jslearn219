@@ -1,2 +1,2 @@
 # jslearn219
-Aprendiendo JavaScript 219
+Aprendiendo JavaScript 2019, esperando aprender mucho.
