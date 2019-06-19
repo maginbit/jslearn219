@@ -28,3 +28,7 @@ console.log(carrito);
 	var producto;
 	//var 2019producto; NO PUEDE TENER NUMEROS O CARACTERES AL PRINCIPIO        
 	
+var x=230,
+    z=40;
+    var sum=x+z+' saludos '+z;
+console.log(sum);    
