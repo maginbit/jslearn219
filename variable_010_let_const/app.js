@@ -10,3 +10,13 @@ let producto = 'Televisor',
 //let producto = 'Lavadora'; no se puede volover a declarar
 const  COLORBLANCO = '#ffffff';
 console.log(COLORBLANCO);
+//concatenar variables
+
+let marca = 'Nissan',
+    modelo = 'v16';
+
+    //concatenacion antigua
+     console.log(marca+' '+modelo);
+     //concatenacion moderna 
+     console.log(`${marca} ${modelo}`);
+
