@@ -8,4 +8,5 @@ let producto = 'Televisor',
     prod2 = 'Lavadora',
     prod3 = 'Cama';
 //let producto = 'Lavadora'; no se puede volover a declarar
-console.log(prod3);
+const  COLORBLANCO = '#ffffff';
+console.log(COLORBLANCO);
