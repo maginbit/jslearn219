@@ -49,3 +49,50 @@ const mensaje = function(name = 'Visitante', age = 20, profession = 'Periodista'
 
 console.log(mensaje('Jose Rhott',54,'Mecanico'));
 
+console.log('----------------------------')
+console.log('-------------IIFE-----------');
+
+//la funciones iife se ejecutan de manera imnediata si necesidad de llamarla
+
+(function(x,y){
+	let sum;
+	sum = x+y
+	console.log(`La suma es : ${x}+${y} = ${sum}`);
+
+})(20,30);//recibe las variables por parametro
+
+console.log('----------------------------')
+console.log('----metodos de propiedad-----------');
+
+
+//metodos que se enecunetran dentro de un objeto
+
+const player = {
+		reproducir: function(id){
+				console.log(`Reproduciendo el tema ${id}`);
+		},
+		pausar: function(id){
+				console.log(`Tema en pausa ${id}`);
+
+		},
+		detener: function(id){
+				console.log(`Temea Detenido ${id}`);
+
+		}
+};
+
+//los metodos pueden crearse y guardarse fuera del objetos
+
+player.borrar =  function(id){
+				console.log(`Tema eliminado ${id}`);
+
+}
+
+player.reproducir('nobody korn');
+player.pausar('Korn');
+player.borrar(324);
+
+//NOTA: la fuciones no importa donde se llamen antes o despues de crearlas
+
+//NOTA: si una funcion tiene un error, las demas funcion
+//que se que vienen no se ejecutaran, para eso un trycatch ayuda a solucinar este problema
