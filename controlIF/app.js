@@ -46,9 +46,27 @@ else {
 	console.log('Hora no valida');
 }
 
+console.log('...........................');
 
 
+let efec = 300;
+let cred = 300;
+let disp = efec + cred;
+let totalCarr = 5300;
 
+if (totalCarr < efec || totalCarr < cred || totalCarr < disp) {
+
+		console.log('Puedo Pagar');
+}else  {
+	
+	console.log('No puedo pagar');
+}
+
+console.log('...........................');
+
+const login = false;
+
+console.log(login === true ? 'Si se logeo' : 'No se logueo');
 
 
 
