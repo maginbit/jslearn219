@@ -204,6 +204,8 @@ function eliminarTodosCursosCarrito(e){
 
 	}
 
+	
+
 
 
 
