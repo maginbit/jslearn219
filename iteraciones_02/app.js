@@ -41,6 +41,8 @@ const auto = {
 	color:'red',
 	conbustible:'Disel'
 }
+console.log(auto);
+console.log(typeof auto);
 for(let a in auto){
   console.log(`${a} : ${auto[a]}`);
 }
@@ -348,3 +350,48 @@ var dictionary = {
 		console.log(id);
 		console.log(name);
 	}
+
+  
+console.log('------------------------------------------');
+console.log('-----------PUSH           ----------------');
+console.log('------------------------------------------');
+
+
+
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+
+  
+  fruits.push("Kiwi");
+
+  console.log(fruits);
+  let frutList = [];
+for (var i = 0; i < 2; i++) {
+    //let fruta = prompt('insertar fruta');
+    //frutList.push(fruta);
+
+  }
+
+  console.log(frutList);
+console.log('------------------------------------------');
+console.log('-----------new array ----------------');
+console.log('------------------------------------------');
+
+    var ddData = [];
+    
+    for(var i=0; i<5; i++){
+       // Tu fecha
+       var dataFecha=i;
+       // Creas un nuevo objeto.
+       var objeto =   {
+                // Le agregas la fecha
+                fecha: dataFecha,
+                text: "Foursquare"
+       }
+      //Lo agregas al array.
+      ddData.push(objeto);
+    } 
+    
+    for ( x in ddData) {
+        console.log( ddData[x] );
+    }
