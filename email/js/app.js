@@ -70,6 +70,7 @@ function enviarEmail(e) {
      const enviado = document.createElement('img');
      enviado.src = 'img/mail.gif';
      enviado.style.display = 'block';
+     
 
      // Ocultar Spinner y mostrar gif de enviado
 
