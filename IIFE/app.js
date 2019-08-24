@@ -22,8 +22,8 @@ sumar01(20,40);
 
 //IIFE ARROW FUNCTION
 
-((a,b) => {
+((a = 0, b = 0) => {
   let sum;
   sum = a + b;
   console.log(`${sum}`);
-})(30,70);
+})(50,120);
