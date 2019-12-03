@@ -1,0 +1,1 @@
+/*Observer es como un patron de comportamiento */
