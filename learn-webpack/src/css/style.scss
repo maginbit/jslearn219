@@ -1,5 +1,6 @@
-$primario: red;
+$primario:grey;
 $secundario: white;
+$colorli: yellow;
 
 
 body{
@@ -7,4 +8,19 @@ body{
 }
 h3{
     color: $secundario;
+}
+#clientes {
+    list-style: none;
+    padding: 0;
+
+li{
+    padding: 1rem;
+    font-size: 1.4rem;
+    background-color: blue;
+    color: yellow;
+    &:nth-child(2n+1){
+        color: blue;
+        background-color: yellow;
+    }
+}
 }

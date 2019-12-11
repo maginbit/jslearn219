@@ -162,7 +162,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body {\\n  background-color: red; }\\n\\nh3 {\\n  color: white; }\\n\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/css/style.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body {\\n  background-color: grey; }\\n\\nh3 {\\n  color: white; }\\n\\n#clientes {\\n  list-style: none;\\n  padding: 0; }\\n  #clientes li {\\n    padding: 1rem;\\n    font-size: 1.4rem;\\n    background-color: blue;\\n    color: yellow; }\\n    #clientes li:nth-child(2n+1) {\\n      color: blue;\\n      background-color: yellow; }\\n\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/css/style.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -185,7 +185,7 @@ eval("var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.scss */ \"./src/css/style.scss\");\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\nconsole.log('Desde Nosotros.js');\nvar carrrito = ['producto 1', 'producto 2', 'producto 3', 'producto 4', 'producto 5'];\nconsole.log(carrrito);\n\n//# sourceURL=webpack:///./src/js/nosotros.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.scss */ \"./src/css/style.scss\");\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\nconsole.log('Desde Nosotros.js');\n\n//# sourceURL=webpack:///./src/js/nosotros.js?");
 
 /***/ })
 

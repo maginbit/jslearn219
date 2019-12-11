@@ -1,14 +1,18 @@
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
        entry : {
               index: './src/js/index.js',
               nosotros: './src/js/nosotros.js',
+              productos: './src/js/productos.js',
+
        },
        output : {
                 filename : '[name].bundle.js',
                 path : path.join(__dirname, '/dist')
-       },devServer: {
+       },
+       devServer: {
               contentBase: path.join(__dirname, 'dist'),
               compress: true,
               port: 9000
@@ -52,5 +56,20 @@ module.exports = {
                             }
                      }
               }
-       }
+       },
+       plugins:[
+              new HtmlWebpackPlugin({
+                     filename: 'index.html',
+                     template: 'src/template_for_index.html',
+                     title: 'Main_Page'
+              }),
+              new HtmlWebpackPlugin({
+                     filename: 'nosotros.html',
+                     title: 'Main_Page'
+              }),
+              new HtmlWebpackPlugin({
+                     filename: 'productos.html',
+                     title: 'Main_Page'
+              })
+       ]
 }

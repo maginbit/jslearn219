@@ -1,6 +1,14 @@
 import '../css/style.scss';
 
 console.log('Desde Index.js');
-const carrrito = ['producto 1', 'producto 2', 'producto 3', 'producto 4', 'producto 5'];
-console.log(carrrito);
+ const clientes = ['Cliente 1', 'Cliente 2', 'Cliente 3', 'Cliente 4',]
 
+ let html = '';
+
+ clientes.forEach(cliente => {
+     html  +=`
+            <li>${cliente}</li>
+     `;
+ });
+
+ document.querySelector('#clientes').innerHTML = html;
