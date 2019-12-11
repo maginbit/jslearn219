@@ -1,10 +1,17 @@
 const path = require('path');
 
 module.exports = {
-       entry : './src/js/index.js',
+       entry : {
+              index: './src/js/index.js',
+              nosotros: './src/js/nosotros.js',
+       },
        output : {
-                filename : 'bundle.js',
+                filename : '[name].bundle.js',
                 path : path.join(__dirname, '/dist')
+       },devServer: {
+              contentBase: path.join(__dirname, 'dist'),
+              compress: true,
+              port: 9000
        },
        module : {
               rules : [
@@ -34,5 +41,16 @@ module.exports = {
                          ]   
                      }
               ]
+       },
+       optimization: {
+              splitChunks: {
+                     cacheGroups: {
+                            commons: {
+                                   test: /[\\/]node_modules[\\/]/,
+                                   name: 'common',
+                                   chunks: 'all'
+                            }
+                     }
+              }
        }
 }
