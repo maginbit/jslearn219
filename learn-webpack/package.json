@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ejecutar": "webpack --mode development"
+    "ejecutar": "webpack --mode development",
+    "watch": "webpack --watch --mode development"
   },
   "author": "Tomas Veloz",
   "license": "ISC",
@@ -15,6 +16,10 @@
     "@babel/node": "^7.7.4",
     "@babel/preset-env": "^7.7.6",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.3.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   }
