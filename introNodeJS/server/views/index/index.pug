@@ -1,1 +1,26 @@
-h1 Inicio
+extends ../layout/index
+block slider
+    .slider 
+        h1 Rio de Janeiro
+        em aventura
+        
+
+block contenido
+    main.container.mt-5
+        h2.text-center.mb-5 Sobre Nosotros
+        .row.mb-5
+            .col-md-6
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium iusto odio modi exercitationem omnis, quos incidunt animi dolores aut fugit, necessitatibus quas aliquid quisquam corporis quae eligendi vero explicabo saepe.
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate facere sit rem iusto natus doloribus quas voluptatibus ad autem qui fuga sed blanditiis aliquam quia magni, distinctio quo? Alias, nemo!
+            .col-md-6
+                img(src="/img/inicio_nosotros.jpg", class="img-fluid", alt="imagen resort")
+        include ../layout/partials/viajes
+    .descuento
+        .container  
+            .row
+                .col-md-6
+                    .contenido
+                        h3 5% de Descuento
+                        p.titulo Viaje a Canada
+                        p.fecha 1 de Diciembre 2019 - 27 de Diciembre de 2019
+                        p.precio $2,500 USD 
