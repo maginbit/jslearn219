@@ -1,106 +1,32 @@
 const express = require('express');
 const router = express.Router();
 
-//modelo viaje
-const Viaje = require('../models/viajes');
-//modelo testimoniales
-const Testimonial = require('../models/Testimoniales');
 
+//Controladores
+const nosotrosController = require('../controllers/nosotrosControllers');
+const homeController = require('../controllers/homeControllers');
+const viajeController = require('../controllers/viajesCotrollers');
+const testimonialController = require('../controllers/testimonialesControllers');
 
 module.exports = function(){
-    router.get('/',(req, res)=>{
-        const promise = [];
+    
+    //vista home
+    router.get('/', homeController.consultasHomePage);
 
-        promise.push(
-            Viaje.findAll({
-                limit: 3
-            }))
-        promise.push(
-            Testimonial.findAll({
-                limit: 3
-            }))
-            //pasar el promise y ejecutarlo
-            const resultado = Promise.all(promise);
+    //Vista nosotros
+    router.get('/nosotros', nosotrosController.infoNosotros);
 
-             resultado.then(resultado => res.render('index',{
-
-                 pagina: 'Proximos Viajes',
-                 clase: 'home',
-                 viajes : resultado[0],
-                 testimoniales : resultado[1]
-             }))
-             .catch(error => console.log(error));
-    });
-    router.get('/nosotros',(req, res)=>{
-        res.render('nosotros', {
-            pagina: 'Sobre Nosotros'
-        });
-    });
-    router.get('/viajes',(req, res)=>{
-        
-        Viaje.findAll()
-             .then(viajes => res.render('viajes',{
-                 pagina: 'Proximos Viajes',
-                 viajes
-             }))
-             .catch(error => console.log(error));
-    });
+    //vista viajes
+    router.get('/viajes', viajeController.infoViajes);
     
     //Rutas para las vistas con id
-    router.get('/viajes/:id',(req, res)=>{
-        
-        Viaje.findByPk(req.params.id)
-            .then(viaje => res.render('viaje',{
-            viaje
-            }))
-            .catch(error => console.log(error));
-    });
+    router.get('/viajes/:id', viajeController.idViajes);
     
     //mostrar testimonios nota: importante las rutas unas van antes que otras
-    router.get('/testimoniales',(req, res)=>{
-        
-        Testimonial.findAll()
-             .then(testimoniales => res.render('testimoniales',{
-                 pagina: 'Testimoniales',
-                 testimoniales
-             }))
-    });
+    router.get('/testimoniales', testimonialController.vistaTestimonios);
     
-    
-        //cuando se llena del formulario
-    router.post('/testimoniales',(req, res) =>{
-        //validar que todos los campos esten llenos
-        let {nombre, correo, mensaje} = req.body;
-
-        let errores = [];
-        if(!nombre){
-            errores.push({'mensaje' : 'Agrega tu Nombre'});
-        }
-        if(!correo){
-            errores.push({'mensaje' : 'Agrega tu Correo'});
-        }
-        if(!mensaje){
-            errores.push({'mensaje' : 'Agrega tu Mensaje'});
-        }
-        //revisar errorres
-        if (errores.length > 0) {
-            //muestra la vista con errores
-            res.render('testimoniales', {
-                errores,
-                nombre,
-                correo,
-                mensaje
-            })
-        }else{
-            //almacenar en la BD
-            Testimonial.create({
-                nombre,
-                correo,
-                mensaje
-            }).then(testimoniales => res.redirect('/testimoniales'))
-               .catch(error => console.log(error));
-        }
-    });
+    //cuando se llena del formulario
+    router.post('/testimoniales', testimonialController.infoTestimoniales);
        
     
 
