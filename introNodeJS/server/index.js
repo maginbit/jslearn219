@@ -21,11 +21,13 @@ const config = configs[app.get('env')];
 //crear variable para sitio web
 app.locals.titulo = config.nombresitio;
 
-//Muestra el año actual
+//Muestra el año actual y genera ruta
 app.use((req, res, next)=>{
     //crear nueva fecha
     const fecha = new Date();
     res.locals.fechaActual = fecha.getFullYear();
+    res.locals.ruta = req.path;//retorna ruta del barra de direccion
+    //console.log(res.locals);
     return next();
 });
 //ejecutar el bodyparser
