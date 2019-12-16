@@ -2,7 +2,9 @@
 const Testimonial = require('../models/Testimoniales');
 
 
-exports.infoTestimoniales = (req, res) =>{
+exports.infoTestimoniales = async (req, res) =>{
+    
+    
     //validar que todos los campos esten llenos
     let {nombre, correo, mensaje} = req.body;
 
@@ -19,28 +21,31 @@ exports.infoTestimoniales = (req, res) =>{
     //revisar errorres
     if (errores.length > 0) {
         //muestra la vista con errores
+       const testimoniales = await Testimonial.findAll()
         res.render('testimoniales', {
             errores,
             nombre,
             correo,
-            mensaje
+            mensaje,
+            pagina: 'Testimoniales',
+            testimoniales
         })
     }else{
         //almacenar en la BD
-        Testimonial.create({
+        testimoniales = await Testimonial.create({
             nombre,
             correo,
             mensaje
-        }).then(testimoniales => res.redirect('/testimoniales'))
-           .catch(error => console.log(error));
+        })
+        res.redirect('/testimoniales');
     }
 }
 
-exports.vistaTestimonios = (req, res)=>{
+exports.vistaTestimonios = async(req, res)=>{
         
-    Testimonial.findAll()
-         .then(testimoniales => res.render('testimoniales',{
-             pagina: 'Testimoniales',
-             testimoniales
-         }))
+    const testimoniales =  await Testimonial.findAll()
+    res.render('testimoniales',{
+        pagina: 'Testimoniales',
+        testimoniales
+    });
 }

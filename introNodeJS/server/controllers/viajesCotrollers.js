@@ -1,21 +1,20 @@
 //modelo viaje
 const Viaje = require('../models/viajes');
 
-exports.infoViajes = (req, res)=>{
+exports.infoViajes = async (req, res)=>{
         
-    Viaje.findAll()
-         .then(viajes => res.render('viajes',{
-             pagina: 'Proximos Viajes',
-             viajes
-         }))
-         .catch(error => console.log(error));
+    const viajes = await Viaje.findAll()
+    res.render('viajes',{
+        pagina: 'Proximos Viajes',
+        viajes
+    });
 }
 
-exports.idViajes = (req, res)=>{
+exports.idViajes = async (req, res) => {
         
-    Viaje.findByPk(req.params.id)
-        .then(viaje => res.render('viaje',{
+    const viaje = await Viaje.findByPk(req.params.id)
+    //console.log(viaje);
+    res.render('viaje',{
         viaje
-        }))
-        .catch(error => console.log(error));
+        });
 }

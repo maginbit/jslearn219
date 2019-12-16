@@ -4,26 +4,17 @@ const Viaje = require('../models/viajes');
 const Testimonial = require('../models/Testimoniales');
 
 
-exports.consultasHomePage = (req, res)=>{
-    const promise = [];
+exports.consultasHomePage = async (req, res)=>{
+    
+     const viajes = await Viaje.findAll({limit: 3});
+    
+     const testimoniales = await Testimonial.findAll({limit: 3});
 
-    promise.push(
-        Viaje.findAll({
-            limit: 3
-        }))
-    promise.push(
-        Testimonial.findAll({
-            limit: 3
-        }))
-        //pasar el promise y ejecutarlo
-        const resultado = Promise.all(promise);
+     res.render('index',{
 
-         resultado.then(resultado => res.render('index',{
-
-             pagina: 'Proximos Viajes',
-             clase: 'home',
-             viajes : resultado[0],
-             testimoniales : resultado[1]
-         }))
-         .catch(error => console.log(error));
+        pagina: 'Proximos Viajes',
+        clase: 'home',
+        viajes,
+        testimoniales
+    });
 }
